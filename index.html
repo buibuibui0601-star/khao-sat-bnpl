@@ -41,13 +41,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
 .opt{display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:10px;border:1.5px solid #dde3ef;background:#f8fafd;cursor:pointer;font-size:13.5px;color:#2a3a5e;transition:all .18s;text-align:left;width:100%;font-family:inherit}
 .opt:hover{border-color:#0EA5A0;background:#f0fafa}
 .opt.sel{border-color:#0EA5A0;background:#e6f8f7;color:#0a6e6a;font-weight:600}
-.opt.stop-opt{border-color:#e8b8b8;background:#fff8f8}
-.opt.stop-opt.sel{border-color:#d94040;background:#ffe8e8;color:#b02020}
 .radio{width:18px;height:18px;border-radius:50%;border:2px solid #b0bdd6;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .18s}
 .opt.sel .radio{border-color:#0EA5A0;background:#0EA5A0}
 .radio-dot{width:7px;height:7px;border-radius:50%;background:#fff;display:none}
 .opt.sel .radio-dot{display:block}
-.stop-tag{margin-left:auto;font-size:11px;opacity:.65;white-space:nowrap}
 
 /* LIKERT */
 .lik-block{margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid #f0f3f9}
@@ -77,7 +74,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
 .info-box{background:#f0fafa;border-radius:10px;padding:14px 18px;font-size:13px;color:#3a7070;line-height:1.75;border-left:3px solid #0EA5A0}
 
 /* STOP BANNER */
-.stop-banner{margin:14px 20px 0;padding:16px 18px;background:#fff5f5;border-radius:12px;border:1.5px solid #f5b8b8;color:#b03030;font-size:13px;font-weight:500;line-height:1.65;display:flex;gap:12px;align-items:flex-start}
 
 /* NAV */
 .nav-row{display:flex;gap:12px;margin:18px 20px 0;justify-content:flex-end}
@@ -109,7 +105,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
   .card{margin:12px 10px 0;padding:18px}
   .nav-row{margin:12px 10px 0}
   .sec-nav{padding:10px 10px 0}
-  .stop-banner{margin:10px 10px 0}
   .lik-btn{padding:8px 1px;font-size:12px}
   .btn{padding:10px 18px;font-size:13px}
 }
@@ -146,7 +141,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
       <div style="font-size:13px;color:#5a6f8a;font-weight:600">Đại học FPT · Major: Marketing</div>
     </div>
     <div class="intro-h">Khảo sát Hành vi Mua sắm Bốc đồng với BNPL trong Gen Z</div>
-    <div class="intro-p">Nghiên cứu thuộc nhóm 4 môn Marketing Research (MKT301), khám phá tác động của dịch vụ "Mua trước, Trả sau" đến hành vi mua sắm bốc đồng và tâm lý tự thưởng của Gen Z tại Hà Nội. </div>
+    <div class="intro-p">Nghiên cứu thuộc môn Marketing Research (MKT301), khám phá tác động của dịch vụ "Mua trước, Trả sau" đến hành vi mua sắm bốc đồng và tâm lý tự thưởng của Gen Z tại Hà Nội. </div>
     <div class="chips">
       <div class="chip">⏱ 8–10 phút</div>
       <div class="chip">🔒 Ẩn danh & Bảo mật</div>
@@ -159,16 +154,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
   <div class="card hidden" id="sec-0">
     <div class="sec-badge">Phần A</div>
     <div class="sec-title">Thông tin Sàng lọc & Nhân khẩu học</div>
-    <div class="sec-desc">Câu A1–A3 xác định đối tượng nghiên cứu. Nếu bạn không thuộc nhóm mục tiêu, khảo sát sẽ dừng tại đó.</div>
+    <div class="sec-desc">Câu A1–A3 giúp xác định đối tượng nghiên cứu phù hợp.</div>
 
     <div class="q-block">
       <div class="q-label">A1. Bạn thuộc nhóm tuổi nào?</div>
       <div class="opt-list">
-        <button class="opt stop-opt" data-q="A1" data-v="u18" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Dưới 18 tuổi<span class="stop-tag">⛔ Dừng</span></button>
+        <button class="opt" data-q="A1" data-v="u18" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Dưới 18 tuổi</button>
         <button class="opt" data-q="A1" data-v="18-22" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>18 – 22 tuổi</button>
         <button class="opt" data-q="A1" data-v="23-27" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>23 – 27 tuổi</button>
         <button class="opt" data-q="A1" data-v="28-30" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>28 – 30 tuổi</button>
-        <button class="opt stop-opt" data-q="A1" data-v="o30" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Trên 30 tuổi<span class="stop-tag">⛔ Dừng</span></button>
+        <button class="opt" data-q="A1" data-v="o30" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Trên 30 tuổi</button>
       </div>
     </div>
 
@@ -177,7 +172,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
       <div class="opt-list">
         <button class="opt" data-q="A2" data-v="freq" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Có, thường xuyên (≥ 2 lần/tháng)</button>
         <button class="opt" data-q="A2" data-v="occ" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Thỉnh thoảng (≤ 1 lần/tháng)</button>
-        <button class="opt stop-opt" data-q="A2" data-v="never" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Không bao giờ<span class="stop-tag">⛔ Dừng</span></button>
+        <button class="opt" data-q="A2" data-v="never" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Không bao giờ</button>
       </div>
     </div>
 
@@ -186,7 +181,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
       <div class="opt-list">
         <button class="opt" data-q="A3" data-v="used" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Đã sử dụng ít nhất một lần</button>
         <button class="opt" data-q="A3" data-v="intent" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa dùng nhưng có ý định</button>
-        <button class="opt stop-opt" data-q="A3" data-v="no" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa và không có ý định dùng<span class="stop-tag">⛔ Dừng</span></button>
+        <button class="opt" data-q="A3" data-v="no" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa và không có ý định dùng</button>
       </div>
     </div>
 
@@ -239,12 +234,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
         <button class="opt" data-q="A8" data-v="other" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác</button>
       </div>
     </div>
-  </div>
-
-  <!-- STOP BANNER -->
-  <div class="stop-banner hidden" id="stopBanner">
-    <span style="font-size:22px;flex-shrink:0">⛔</span>
-    <div><strong>Bạn không thuộc đối tượng nghiên cứu này.</strong><br>Nghiên cứu hướng đến Gen Z (18–30 tuổi) tại Hà Nội có mua sắm trực tuyến và đã/dự định dùng BNPL. Xin cảm ơn bạn đã dành thời gian!</div>
   </div>
 
   <!-- ==================== BIẾN I: PBC ==================== -->
@@ -300,7 +289,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
     <div class="sec-badge">Biến V · Moderator H6</div>
     <div class="sec-title">Khả năng tự điều chỉnh hành vi</div>
     <div class="sec-subtitle">Self-Regulation – SR</div>
-    <div class="sec-desc">Đánh giá mức độ kiểm soát bản thân trong chi tiêu. <strong>SR3 là câu ngược (reverse-coded)</strong> — cần đảo điểm (điểm thực = 8 − điểm chọn).</div>
+    <div class="sec-desc">Đánh giá mức độ kiểm soát bản thân trong chi tiêu. <strong>SR3 là câu ngược (reverse-coded)</strong> — cần đảo điểm khi nhập SPSS (điểm thực = 8 − điểm chọn).</div>
     <div class="lik-block"><div class="lik-q"><span class="lik-code">SR1</span>Trước khi mua sắm, tôi thường lập danh sách hoặc ngân sách cụ thể và tuân thủ đúng theo kế hoạch.</div><div class="lik-scale" id="SR1"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
     <div class="lik-block"><div class="lik-q"><span class="lik-code">SR2</span>Ngay cả khi muốn mua ngay lập tức, tôi vẫn dừng lại để suy nghĩ xem mình có thực sự cần món đồ đó không.</div><div class="lik-scale" id="SR2"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
     <div class="lik-block"><div class="lik-q"><span class="lik-code" style="background:#fff3e0;color:#c07000">SR3 (R)</span>Tôi khó lòng kiềm chế bản thân khi nhìn thấy sản phẩm ưa thích đang được khuyến mãi kèm tùy chọn trả góp. <span style="color:#c07000;font-size:12px">⚠️ Câu ngược – đảo điểm khi nhập SPSS</span></div><div class="lik-scale" id="SR3"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
@@ -371,6 +360,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
     </div>
   </div>
 
+  <!-- ==================== NOT ELIGIBLE ==================== -->
+  <div class="card hidden" id="sec-ineligible">
+    <div class="ty">
+      <div class="ty-icon">🙏</div>
+      <div class="ty-h">Bạn không thuộc đối tượng nghiên cứu này</div>
+      <div class="ty-p">Nghiên cứu hướng đến Gen Z (18–30 tuổi) tại Hà Nội có mua sắm trực tuyến và đã/dự định dùng BNPL. Xin cảm ơn bạn đã dành thời gian!</div>
+      <div class="ty-footer">👥 Nhóm 4 · MKT301 · Trường Đại học FPT Hà Nội</div>
+    </div>
+  </div>
+
   <!-- NAV BUTTONS -->
   <div class="nav-row" id="navRow">
     <button class="btn btn-back hidden" id="btnBack" onclick="goBack()">← Quay lại</button>
@@ -383,12 +382,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
 // ============ STATE ============
 var step = -1; // -1=intro, 0-6=sections, 7=done
 var answers = {};
-var stopTriggered = false;
 
 // ====== THU THẬP DỮ LIỆU ======
 // Để trống = chỉ lưu trên máy này (localStorage), xem bằng dashboard.html trên CÙNG trình duyệt.
 // Dán URL Google Apps Script vào đây để thu thập online từ mọi người (xem hướng dẫn).
-var BACKEND_URL = "https://script.google.com/macros/s/AKfycbzLmif4FfYTR5pqsg6nXL439PjbmEzMeDOjVrCg1HfHjkqfFXptJ0aI6k4taqPXr1C0mg/exec";
+var BACKEND_URL = "";
 var STORE_KEY = "bnpl_survey_responses";
 var ALL_FIELDS = ['A1','A2','A3','A4','A5','A6','A7','A8',
   'PBC1','PBC2','PBC3','PBC4','PPM1','PPM2','PPM3','PPM4',
@@ -462,7 +460,6 @@ function selectLikert(id, val) {
 function pick(btn) {
   var q = btn.getAttribute('data-q');
   var v = btn.getAttribute('data-v');
-  var isStop = btn.getAttribute('data-stop') === '1';
 
   // Deselect siblings
   var siblings = document.querySelectorAll('[data-q="' + q + '"]');
@@ -470,27 +467,26 @@ function pick(btn) {
   btn.classList.add('sel');
   answers[q] = v;
 
-  // Check stop
-  checkStop();
+  // Đáp án không thuộc đối tượng -> chuyển sang trang cảm ơn riêng
+  if (btn.getAttribute('data-stop') === '1') { showIneligible(); return; }
   updateNext();
 }
 
-function checkStop() {
-  stopTriggered = false;
-  STOP_QS.forEach(function(q) {
-    if (answers[q]) {
-      var btn = document.querySelector('[data-q="' + q + '"][data-v="' + answers[q] + '"]');
-      if (btn && btn.getAttribute('data-stop') === '1') stopTriggered = true;
-    }
-  });
-  document.getElementById('stopBanner').classList.toggle('hidden', !stopTriggered);
-  updateNext();
+function showIneligible() {
+  document.getElementById('sec-intro').classList.add('hidden');
+  for (var i = 0; i <= 6; i++) document.getElementById('sec-'+i).classList.add('hidden');
+  document.getElementById('sec-done').classList.add('hidden');
+  document.getElementById('sec-ineligible').classList.remove('hidden');
+  document.getElementById('secNav').classList.add('hidden');
+  document.getElementById('navRow').classList.add('hidden');
+  document.getElementById('progFill').style.width = '100%';
+  document.getElementById('progMeta').textContent = '';
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 // ============ NAVIGATION ============
 function canProceed() {
   if (step < 0) return true;
-  if (stopTriggered) return false;
   var req = SEC_REQUIRED[step] || [];
   return req.every(function(k) { return answers[k] !== undefined; });
 }
@@ -498,7 +494,6 @@ function canProceed() {
 function updateNext() {
   var btn = document.getElementById('btnNext');
   btn.disabled = !canProceed();
-  if (stopTriggered) btn.disabled = true;
 }
 
 function showSection(s) {
@@ -506,7 +501,7 @@ function showSection(s) {
   document.getElementById('sec-intro').classList.add('hidden');
   for (var i = 0; i <= 6; i++) document.getElementById('sec-'+i).classList.add('hidden');
   document.getElementById('sec-done').classList.add('hidden');
-  document.getElementById('stopBanner').classList.add('hidden');
+  document.getElementById('sec-ineligible').classList.add('hidden');
 
   if (s === -1) {
     document.getElementById('sec-intro').classList.remove('hidden');
@@ -524,7 +519,6 @@ function showSection(s) {
     document.getElementById('progMeta').textContent = 'Hoàn tất 100%';
   } else {
     document.getElementById('sec-'+s).classList.remove('hidden');
-    if (s === 0 && stopTriggered) document.getElementById('stopBanner').classList.remove('hidden');
     document.getElementById('secNav').classList.remove('hidden');
     var pct = Math.round((s + 1) / 7 * 100);
     document.getElementById('progFill').style.width = pct + '%';
