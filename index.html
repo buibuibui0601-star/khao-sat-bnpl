@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PHIẾU KHẢO SÁT NGHIÊN CỨU: BNPL & Hành vi mua sắm Gen Z – Nhóm 4 MKT301</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:100vh;color:#1a2540}
+
+.shell{max-width:740px;margin:0 auto;padding:0 0 80px}
+
+/* TOP BAR */
+.top-bar{background:#1B3A6B;color:#fff;padding:16px 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(27,58,107,.4)}
+.top-inner{max-width:740px;margin:0 auto}
+.top-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-bottom:3px}
+.top-title{font-size:14px;font-weight:700}
+.prog-track{margin-top:10px;background:rgba(255,255,255,.2);border-radius:99px;height:5px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,#0EA5A0,#38d9c8);border-radius:99px;transition:width .5s ease;width:0%}
+.prog-meta{font-size:11px;opacity:.6;margin-top:4px;text-align:right}
+
+/* SECTION PILLS */
+.sec-nav{display:flex;gap:6px;padding:14px 20px 0;flex-wrap:wrap}
+.pill{font-size:11px;font-weight:600;padding:4px 11px;border-radius:99px;border:1.5px solid #c4d0e4;color:#5a6f8a;background:#fff;white-space:nowrap;transition:all .2s}
+.pill.active{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+.pill.done{background:#e6f8f7;color:#0EA5A0;border-color:#0EA5A0}
+
+/* CARDS */
+.card{background:#fff;border-radius:16px;margin:16px 20px 0;padding:26px;box-shadow:0 2px 16px rgba(27,58,107,.07);animation:fadeUp .3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+.sec-badge{display:inline-block;background:linear-gradient(135deg,#1B3A6B,#2a5298);color:#fff;font-size:11px;font-weight:700;padding:3px 11px;border-radius:99px;letter-spacing:.05em;margin-bottom:10px}
+.sec-title{font-size:18px;font-weight:800;color:#1B3A6B;margin-bottom:4px}
+.sec-subtitle{font-size:12px;color:#0EA5A0;font-style:italic;margin-bottom:6px}
+.sec-desc{font-size:13px;color:#6b7fa0;line-height:1.7;padding-bottom:18px;border-bottom:1px solid #edf0f7;margin-bottom:20px}
+
+/* MCQ */
+.q-block{margin-bottom:22px}
+.q-label{font-size:14px;font-weight:700;color:#1a2540;margin-bottom:10px;line-height:1.5}
+.opt-list{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:10px;border:1.5px solid #dde3ef;background:#f8fafd;cursor:pointer;font-size:13.5px;color:#2a3a5e;transition:all .18s;text-align:left;width:100%;font-family:inherit}
+.opt:hover{border-color:#0EA5A0;background:#f0fafa}
+.opt.sel{border-color:#0EA5A0;background:#e6f8f7;color:#0a6e6a;font-weight:600}
+.opt.stop-opt{border-color:#e8b8b8;background:#fff8f8}
+.opt.stop-opt.sel{border-color:#d94040;background:#ffe8e8;color:#b02020}
+.radio{width:18px;height:18px;border-radius:50%;border:2px solid #b0bdd6;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .18s}
+.opt.sel .radio{border-color:#0EA5A0;background:#0EA5A0}
+.radio-dot{width:7px;height:7px;border-radius:50%;background:#fff;display:none}
+.opt.sel .radio-dot{display:block}
+.stop-tag{margin-left:auto;font-size:11px;opacity:.65;white-space:nowrap}
+
+/* LIKERT */
+.lik-block{margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid #f0f3f9}
+.lik-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.lik-q{font-size:13.5px;font-weight:600;color:#1a2540;margin-bottom:11px;line-height:1.65}
+.lik-code{display:inline-block;font-size:10px;font-weight:700;color:#0EA5A0;background:#e6f8f7;padding:2px 7px;border-radius:5px;margin-right:6px;vertical-align:middle}
+.lik-scale{display:flex;gap:5px}
+.lik-btn{flex:1;padding:10px 2px;border-radius:9px;border:1.5px solid #dde3ef;background:#f8fafd;cursor:pointer;font-size:13px;font-weight:700;color:#8090aa;transition:all .18s;text-align:center;font-family:inherit}
+.lik-btn:hover{border-color:#0EA5A0;color:#0EA5A0;background:#f0fafa}
+.lik-btn.s1{background:#d94040;border-color:#d94040;color:#fff}
+.lik-btn.s2{background:#e07040;border-color:#e07040;color:#fff}
+.lik-btn.s3{background:#e0a040;border-color:#e0a040;color:#fff}
+.lik-btn.s4{background:#8095aa;border-color:#8095aa;color:#fff}
+.lik-btn.s5{background:#4a88c0;border-color:#4a88c0;color:#fff}
+.lik-btn.s6{background:#2268b8;border-color:#2268b8;color:#fff}
+.lik-btn.s7{background:#0EA5A0;border-color:#0EA5A0;color:#fff}
+.lik-ends{display:flex;justify-content:space-between;margin-top:5px}
+.lik-end{font-size:10px;color:#a0aec0;max-width:120px}
+
+/* INTRO */
+.intro-logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.fpt-badge{background:#1B3A6B;color:#fff;font-size:14px;font-weight:800;padding:8px 15px;border-radius:10px}
+.intro-h{font-size:21px;font-weight:800;color:#1B3A6B;line-height:1.35;margin-bottom:10px}
+.intro-p{font-size:13.5px;color:#5a6f8a;line-height:1.75;margin-bottom:20px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.chip{background:#EEF2F7;border-radius:8px;padding:6px 13px;font-size:12px;color:#4a5a78;font-weight:600}
+.info-box{background:#f0fafa;border-radius:10px;padding:14px 18px;font-size:13px;color:#3a7070;line-height:1.75;border-left:3px solid #0EA5A0}
+
+/* STOP BANNER */
+.stop-banner{margin:14px 20px 0;padding:16px 18px;background:#fff5f5;border-radius:12px;border:1.5px solid #f5b8b8;color:#b03030;font-size:13px;font-weight:500;line-height:1.65;display:flex;gap:12px;align-items:flex-start}
+
+/* NAV */
+.nav-row{display:flex;gap:12px;margin:18px 20px 0;justify-content:flex-end}
+.btn{padding:11px 26px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
+.btn-back{background:#fff;color:#5a6f8a;border:1.5px solid #dde3ef}
+.btn-back:hover{border-color:#1B3A6B;color:#1B3A6B}
+.btn-next{background:linear-gradient(135deg,#1B3A6B,#2a5298);color:#fff;box-shadow:0 4px 14px rgba(27,58,107,.28)}
+.btn-next:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(27,58,107,.38)}
+.btn-next:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-submit{background:linear-gradient(135deg,#0EA5A0,#0b8a85);box-shadow:0 4px 14px rgba(14,165,160,.32)}
+
+/* THANK YOU */
+.ty{text-align:center;padding:36px 20px}
+.ty-icon{font-size:58px;margin-bottom:14px}
+.ty-h{font-size:22px;font-weight:800;color:#1B3A6B;margin-bottom:10px}
+.ty-p{font-size:13.5px;color:#6b7fa0;line-height:1.75}
+.ty-box{background:#e6f8f7;border-radius:12px;padding:18px 20px;margin-top:22px;text-align:left}
+.ty-box-h{font-size:11px;font-weight:800;color:#0EA5A0;text-transform:uppercase;letter-spacing:.09em;margin-bottom:12px}
+.ty-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid #c0eceb}
+.ty-row:last-child{border:none}
+.ty-key{color:#4a7070}
+.ty-val{font-weight:700;color:#1B3A6B}
+.ty-footer{margin-top:18px;font-size:12.5px;color:#9aa5bb}
+
+/* HIDDEN */
+.hidden{display:none}
+
+@media(max-width:500px){
+  .card{margin:12px 10px 0;padding:18px}
+  .nav-row{margin:12px 10px 0}
+  .sec-nav{padding:10px 10px 0}
+  .stop-banner{margin:10px 10px 0}
+  .lik-btn{padding:8px 1px;font-size:12px}
+  .btn{padding:10px 18px;font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-inner">
+      <div class="top-eyebrow">MKT301 · Nhóm 4 · FPT University</div>
+      <div class="top-title">Khảo sát BNPL & Hành vi Mua sắm Bốc đồng – Gen Z Hà Nội</div>
+      <div class="prog-track"><div class="prog-fill" id="progFill"></div></div>
+      <div class="prog-meta" id="progMeta"></div>
+    </div>
+  </div>
+
+  <!-- SECTION NAV -->
+  <div class="sec-nav hidden" id="secNav">
+    <div class="pill" data-sec="0">Sàng lọc</div>
+    <div class="pill" data-sec="1">BNPL Convenience</div>
+    <div class="pill" data-sec="2">Pain of Paying</div>
+    <div class="pill" data-sec="3">Self-Reward</div>
+    <div class="pill" data-sec="4">Impulse Buying</div>
+    <div class="pill" data-sec="5">Self-Regulation</div>
+    <div class="pill" data-sec="6">Hành vi</div>
+  </div>
+
+  <!-- ==================== INTRO ==================== -->
+  <div class="card" id="sec-intro">
+    <div class="intro-logo">
+      <div class="fpt-badge">FPT</div>
+      <div style="font-size:13px;color:#5a6f8a;font-weight:600">Đại học FPT · Major: Marketing</div>
+    </div>
+    <div class="intro-h">Khảo sát Hành vi Mua sắm Bốc đồng với BNPL trong Gen Z</div>
+    <div class="intro-p">Nghiên cứu thuộc môn Marketing Research (MKT301), khám phá tác động của dịch vụ "Mua trước, Trả sau" đến hành vi mua sắm bốc đồng và tâm lý tự thưởng của Gen Z tại Hà Nội. </div>
+    <div class="chips">
+      <div class="chip">⏱ 8–10 phút</div>
+      <div class="chip">🔒 Ẩn danh & Bảo mật</div>
+      <div class="chip">🎯 Gen Z Hà Nội</div>
+    </div>
+    <div class="info-box">ℹ️ Không có câu trả lời đúng hay sai. Mọi thông tin hoàn toàn ẩn danh và chỉ phục vụ mục đích nghiên cứu học thuật. Xin trân trọng cảm ơn!</div>
+  </div>
+
+  <!-- ==================== PHẦN A: FILTER ==================== -->
+  <div class="card hidden" id="sec-0">
+    <div class="sec-badge">Phần A</div>
+    <div class="sec-title">Thông tin Sàng lọc & Nhân khẩu học</div>
+    <div class="sec-desc">Câu A1–A3 xác định đối tượng nghiên cứu. Nếu bạn không thuộc nhóm mục tiêu, khảo sát sẽ dừng tại đó.</div>
+
+    <div class="q-block">
+      <div class="q-label">A1. Bạn thuộc nhóm tuổi nào?</div>
+      <div class="opt-list">
+        <button class="opt stop-opt" data-q="A1" data-v="u18" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Dưới 18 tuổi<span class="stop-tag">⛔ Dừng</span></button>
+        <button class="opt" data-q="A1" data-v="18-22" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>18 – 22 tuổi</button>
+        <button class="opt" data-q="A1" data-v="23-27" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>23 – 27 tuổi</button>
+        <button class="opt" data-q="A1" data-v="28-30" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>28 – 30 tuổi</button>
+        <button class="opt stop-opt" data-q="A1" data-v="o30" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Trên 30 tuổi<span class="stop-tag">⛔ Dừng</span></button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">A2. Bạn có thường xuyên mua sắm trực tuyến (Shopee, Lazada, TikTok Shop…) không?</div>
+      <div class="opt-list">
+        <button class="opt" data-q="A2" data-v="freq" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Có, thường xuyên (≥ 2 lần/tháng)</button>
+        <button class="opt" data-q="A2" data-v="occ" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Thỉnh thoảng (≤ 1 lần/tháng)</button>
+        <button class="opt stop-opt" data-q="A2" data-v="never" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Không bao giờ<span class="stop-tag">⛔ Dừng</span></button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">A3. Bạn đã từng sử dụng hoặc có ý định dùng BNPL (SPayLater, LazPayLater…) chưa?</div>
+      <div class="opt-list">
+        <button class="opt" data-q="A3" data-v="used" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Đã sử dụng ít nhất một lần</button>
+        <button class="opt" data-q="A3" data-v="intent" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa dùng nhưng có ý định</button>
+        <button class="opt stop-opt" data-q="A3" data-v="no" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa và không có ý định dùng<span class="stop-tag">⛔ Dừng</span></button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">A4. Giới tính của bạn:</div>
+      <div class="opt-list">
+        <button class="opt" data-q="A4" data-v="m" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Nam</button>
+        <button class="opt" data-q="A4" data-v="f" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Nữ</button>
+        <button class="opt" data-q="A4" data-v="o" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác / Không muốn tiết lộ</button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">A5. Hiện tại bạn là:</div>
+      <div class="opt-list">
+        <button class="opt" data-q="A5" data-v="stu" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Học sinh / Sinh viên</button>
+        <button class="opt" data-q="A5" data-v="work" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Đi làm toàn thời gian</button>
+        <button class="opt" data-q="A5" data-v="both" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Vừa học vừa làm</button>
+        <button class="opt" data-q="A5" data-v="other" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác</button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">A6. Thu nhập / Trợ cấp bình quân hàng tháng (VNĐ):</div>
+      <div class="opt-list">
+        <button class="opt" data-q="A6" data-v="lt3" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Dưới 3 triệu</button>
+        <button class="opt" data-q="A6" data-v="3-7" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>3 – 7 triệu</button>
+        <button class="opt" data-q="A6" data-v="7-15" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>7 – 15 triệu</button>
+        <button class="opt" data-q="A6" data-v="gt15" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Trên 15 triệu</button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">A7. Tần suất sử dụng BNPL trong 3 tháng gần nhất:</div>
+      <div class="opt-list">
+        <button class="opt" data-q="A7" data-v="0" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa sử dụng</button>
+        <button class="opt" data-q="A7" data-v="1-2" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>1 – 2 lần</button>
+        <button class="opt" data-q="A7" data-v="3-5" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>3 – 5 lần</button>
+        <button class="opt" data-q="A7" data-v="5p" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Trên 5 lần</button>
+      </div>
+    </div>
+
+    <div class="q-block" style="margin-bottom:0">
+      <div class="q-label">A8. Nền tảng BNPL bạn dùng nhiều nhất:</div>
+      <div class="opt-list">
+        <button class="opt" data-q="A8" data-v="spay" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>SPayLater (Shopee)</button>
+        <button class="opt" data-q="A8" data-v="lazpay" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>LazPayLater (Lazada)</button>
+        <button class="opt" data-q="A8" data-v="kredivo" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Kredivo</button>
+        <button class="opt" data-q="A8" data-v="momo" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Ví MoMo Trả sau</button>
+        <button class="opt" data-q="A8" data-v="other" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STOP BANNER -->
+  <div class="stop-banner hidden" id="stopBanner">
+    <span style="font-size:22px;flex-shrink:0">⛔</span>
+    <div><strong>Bạn không thuộc đối tượng nghiên cứu này.</strong><br>Nghiên cứu hướng đến Gen Z (18–30 tuổi) tại Hà Nội có mua sắm trực tuyến và đã/dự định dùng BNPL. Xin cảm ơn bạn đã dành thời gian!</div>
+  </div>
+
+  <!-- ==================== BIẾN I: PBC ==================== -->
+  <div class="card hidden" id="sec-1">
+    <div class="sec-badge">Biến I · H1</div>
+    <div class="sec-title">Nhận thức về sự tiện lợi của BNPL</div>
+    <div class="sec-subtitle">Perceived BNPL Convenience – PBC</div>
+    <div class="sec-desc">Vui lòng đánh giá mức độ đồng ý với từng phát biểu dưới đây (1 = Hoàn toàn không đồng ý → 7 = Hoàn toàn đồng ý).</div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PBC1</span>Việc đăng ký và kích hoạt dịch vụ BNPL trên ứng dụng mua sắm rất đơn giản và nhanh chóng.</div><div class="lik-scale" id="PBC1"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PBC2</span>Quy trình thanh toán qua BNPL (1-click, xác thực sinh trắc học) giúp tôi hoàn tất giao dịch gần như không cần nỗ lực.</div><div class="lik-scale" id="PBC2"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PBC3</span>BNPL giúp tôi chủ động quản lý dòng tiền tốt hơn so với thanh toán toàn bộ một lần.</div><div class="lik-scale" id="PBC3"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PBC4</span>Tôi cảm thấy BNPL là phương thức thanh toán thuận tiện và phù hợp với lối sống mua sắm của tôi.</div><div class="lik-scale" id="PBC4"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+  </div>
+
+  <!-- ==================== BIẾN II: PPM ==================== -->
+  <div class="card hidden" id="sec-2">
+    <div class="sec-badge">Biến II · H2 H3</div>
+    <div class="sec-title">Giảm thiểu "Nỗi đau thanh toán"</div>
+    <div class="sec-subtitle">Pain of Paying Mitigation – PPM</div>
+    <div class="sec-desc">Các phát biểu đề cập đến cảm giác của bạn về tổn thất tài chính khi mua sắm qua BNPL.</div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PPM1</span>Khi dùng BNPL, tôi ít cảm thấy "mất tiền" hơn so với trả tiền mặt hoặc chuyển khoản ngay.</div><div class="lik-scale" id="PPM1"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PPM2</span>Việc chia nhỏ khoản thanh toán qua BNPL khiến tôi không còn lo lắng về tổng chi phí tại thời điểm mua.</div><div class="lik-scale" id="PPM2"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PPM3</span>Cảm giác "đau" khi trả tiền gần như biến mất hoàn toàn khi dùng BNPL so với các hình thức khác.</div><div class="lik-scale" id="PPM3"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">PPM4</span>BNPL giúp tôi không bị "ám ảnh" bởi con số giá tiền khi quyết định mua hàng.</div><div class="lik-scale" id="PPM4"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+  </div>
+
+  <!-- ==================== BIẾN III: SRP ==================== -->
+  <div class="card hidden" id="sec-3">
+    <div class="sec-badge">Biến III · H4</div>
+    <div class="sec-title">Tâm lý tự thưởng</div>
+    <div class="sec-subtitle">Self-Reward Psychology – SRP</div>
+    <div class="sec-desc">Các phát biểu mô tả động cơ tâm lý đằng sau những lần bạn mua sắm cho bản thân.</div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">SRP1</span>Tôi thường mua đồ cho bản thân như một phần thưởng sau khi hoàn thành nhiệm vụ hoặc vượt qua giai đoạn căng thẳng.</div><div class="lik-scale" id="SRP1"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">SRP2</span>Việc mua sắm không thiết yếu giúp tôi cảm thấy tốt hơn và được an ủi khi đang mệt mỏi hoặc chán nản.</div><div class="lik-scale" id="SRP2"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">SRP3</span>Tôi thường nghĩ "Mình đã cố gắng rất nhiều, mình xứng đáng được mua thứ này" trước khi quyết định chi tiêu.</div><div class="lik-scale" id="SRP3"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">SRP4</span>Khi dùng BNPL, tôi dễ dàng biện hộ cho quyết định mua sắm tự thưởng hơn vì không cảm thấy tốn tiền ngay lúc đó.</div><div class="lik-scale" id="SRP4"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+  </div>
+
+  <!-- ==================== BIẾN IV: IBI ==================== -->
+  <div class="card hidden" id="sec-4">
+    <div class="sec-badge">Biến IV · Phụ thuộc</div>
+    <div class="sec-title">Ý định mua sắm bốc đồng</div>
+    <div class="sec-subtitle">Impulse Buying Intention – IBI</div>
+    <div class="sec-desc">Các phát biểu mô tả xu hướng mua sắm ngẫu hứng của bạn khi sử dụng BNPL.</div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">IBI1</span>Tôi thường mua hàng ngay lập tức mà không cần suy nghĩ nhiều khi thấy sản phẩm hấp dẫn và có thể trả góp qua BNPL.</div><div class="lik-scale" id="IBI1"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">IBI2</span>Khả năng thanh toán BNPL khiến tôi thêm vào giỏ hàng những món đồ mà tôi không có kế hoạch mua từ trước.</div><div class="lik-scale" id="IBI2"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">IBI3</span>Khi xem livestream hoặc flash sale, tôi dễ dàng mua ngay không do dự hơn khi có tùy chọn BNPL.</div><div class="lik-scale" id="IBI3"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">IBI4</span>Tôi nhận ra mình có xu hướng chi tiêu nhiều hơn mức định ban đầu khi sử dụng hình thức trả sau.</div><div class="lik-scale" id="IBI4"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+  </div>
+
+  <!-- ==================== BIẾN V: SR ==================== -->
+  <div class="card hidden" id="sec-5">
+    <div class="sec-badge">Biến V · Moderator H6</div>
+    <div class="sec-title">Khả năng tự điều chỉnh hành vi</div>
+    <div class="sec-subtitle">Self-Regulation – SR</div>
+    <div class="sec-desc">Đánh giá mức độ kiểm soát bản thân trong chi tiêu. <strong>SR3 là câu ngược (reverse-coded)</strong> — cần đảo điểm khi nhập SPSS (điểm thực = 8 − điểm chọn).</div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">SR1</span>Trước khi mua sắm, tôi thường lập danh sách hoặc ngân sách cụ thể và tuân thủ đúng theo kế hoạch.</div><div class="lik-scale" id="SR1"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">SR2</span>Ngay cả khi muốn mua ngay lập tức, tôi vẫn dừng lại để suy nghĩ xem mình có thực sự cần món đồ đó không.</div><div class="lik-scale" id="SR2"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code" style="background:#fff3e0;color:#c07000">SR3 (R)</span>Tôi khó lòng kiềm chế bản thân khi nhìn thấy sản phẩm ưa thích đang được khuyến mãi kèm tùy chọn trả góp. <span style="color:#c07000;font-size:12px">⚠️ Câu ngược – đảo điểm khi nhập SPSS</span></div><div class="lik-scale" id="SR3"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+    <div class="lik-block"><div class="lik-q"><span class="lik-code">SR4</span>Tôi có khả năng từ chối những cám dỗ mua sắm không cần thiết dù phương thức thanh toán có linh hoạt đến mức nào.</div><div class="lik-scale" id="SR4"></div><div class="lik-ends"><span class="lik-end" style="color:#d94040">Hoàn toàn không đồng ý</span><span class="lik-end" style="text-align:right;color:#0EA5A0">Hoàn toàn đồng ý</span></div></div>
+  </div>
+
+  <!-- ==================== PHẦN C: EXTRA ==================== -->
+  <div class="card hidden" id="sec-6">
+    <div class="sec-badge">Phần C · Q3</div>
+    <div class="sec-title">Câu hỏi hành vi bổ sung</div>
+    <div class="sec-desc">So sánh hành vi mua sắm thực tế khi dùng BNPL so với phương thức thanh toán truyền thống (tiền mặt, chuyển khoản, thẻ ghi nợ).</div>
+
+    <div class="q-block">
+      <div class="q-label">C1. So với thanh toán truyền thống, tần suất mua sắm của bạn thay đổi như thế nào khi dùng BNPL?</div>
+      <div class="opt-list">
+        <button class="opt" data-q="C1" data-v="inc50" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Tăng đáng kể (mua nhiều hơn ≥ 50%)</button>
+        <button class="opt" data-q="C1" data-v="inc20" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Tăng nhẹ (thêm khoảng 20–49%)</button>
+        <button class="opt" data-q="C1" data-v="same" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Không thay đổi</button>
+        <button class="opt" data-q="C1" data-v="dec" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Giảm</button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">C2. Giá trị đơn hàng trung bình (AOV) khi dùng BNPL so với thanh toán truyền thống:</div>
+      <div class="opt-list">
+        <button class="opt" data-q="C2" data-v="inc30" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Cao hơn đáng kể (tăng ≥ 30%)</button>
+        <button class="opt" data-q="C2" data-v="inc10" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Cao hơn một chút (10–29%)</button>
+        <button class="opt" data-q="C2" data-v="same" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Tương đương</button>
+        <button class="opt" data-q="C2" data-v="dec" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Thấp hơn</button>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">C3. Bạn có từng mua sản phẩm vượt ngân sách ban đầu vì có tùy chọn BNPL không?</div>
+      <div class="opt-list">
+        <button class="opt" data-q="C3" data-v="often" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Có, thường xuyên</button>
+        <button class="opt" data-q="C3" data-v="sometimes" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Có, đôi khi</button>
+        <button class="opt" data-q="C3" data-v="rarely" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Hiếm khi</button>
+        <button class="opt" data-q="C3" data-v="never" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Không bao giờ</button>
+      </div>
+    </div>
+
+    <div class="q-block" style="margin-bottom:0">
+      <div class="q-label">C4. Bạn có cảm thấy áp lực tài chính từ các khoản trả góp BNPL tích lũy không?</div>
+      <div class="opt-list">
+        <button class="opt" data-q="C4" data-v="high" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Có, áp lực rất lớn</button>
+        <button class="opt" data-q="C4" data-v="mid" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Có, áp lực vừa phải</button>
+        <button class="opt" data-q="C4" data-v="low" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Rất ít</button>
+        <button class="opt" data-q="C4" data-v="no" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Không</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== THANK YOU ==================== -->
+  <div class="card hidden" id="sec-done">
+    <div class="ty">
+      <div class="ty-icon">🎉</div>
+      <div class="ty-h">Cảm ơn bạn đã tham gia!</div>
+      <div class="ty-p">Câu trả lời của bạn đã được ghi nhận. Kết quả sẽ được sử dụng hoàn toàn cho mục đích nghiên cứu học thuật của nhóm MKT301 – FPT University.</div>
+      <div class="ty-box">
+        <div class="ty-box-h">📊 Tóm tắt phản hồi</div>
+        <div class="ty-row"><span class="ty-key">Biến đo lường</span><span class="ty-val">5 biến · 20 items Likert</span></div>
+        <div class="ty-row"><span class="ty-key">Thang đo</span><span class="ty-val">7 điểm (1 → 7)</span></div>
+        <div class="ty-row"><span class="ty-key">Phương pháp</span><span class="ty-val">PLS-SEM / SPSS</span></div>
+        <div class="ty-row"><span class="ty-key">Mô hình</span><span class="ty-val">S-O-R · H1–H6</span></div>
+      </div>
+      <div class="ty-footer">👥 Nhóm 4 · MKT301 · Trường Đại học FPT Hà Nội</div>
+    </div>
+  </div>
+
+  <!-- NAV BUTTONS -->
+  <div class="nav-row" id="navRow">
+    <button class="btn btn-back hidden" id="btnBack" onclick="goBack()">← Quay lại</button>
+    <button class="btn btn-next" id="btnNext" onclick="goNext()">Bắt đầu khảo sát →</button>
+  </div>
+
+</div>
+
+<script>
+// ============ STATE ============
+var step = -1; // -1=intro, 0-6=sections, 7=done
+var answers = {};
+var stopTriggered = false;
+
+// ====== THU THẬP DỮ LIỆU ======
+// Để trống = chỉ lưu trên máy này (localStorage), xem bằng dashboard.html trên CÙNG trình duyệt.
+// Dán URL Google Apps Script vào đây để thu thập online từ mọi người (xem hướng dẫn).
+var BACKEND_URL = "";
+var STORE_KEY = "bnpl_survey_responses";
+var ALL_FIELDS = ['A1','A2','A3','A4','A5','A6','A7','A8',
+  'PBC1','PBC2','PBC3','PBC4','PPM1','PPM2','PPM3','PPM4',
+  'SRP1','SRP2','SRP3','SRP4','IBI1','IBI2','IBI3','IBI4',
+  'SR1','SR2','SR3','SR4','C1','C2','C3','C4'];
+
+function saveResponse() {
+  var rec = { id: 'R' + Date.now() + Math.floor(Math.random()*900+100), ts: new Date().toISOString() };
+  ALL_FIELDS.forEach(function(k){ rec[k] = (answers[k] !== undefined ? answers[k] : ''); });
+  // Lưu trên máy
+  try {
+    var arr = JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+    arr.push(rec);
+    localStorage.setItem(STORE_KEY, JSON.stringify(arr));
+  } catch (e) {}
+  // Gửi online (nếu có cấu hình)
+  if (BACKEND_URL) {
+    try {
+      fetch(BACKEND_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(rec)
+      }).catch(function(){});
+    } catch (e) {}
+  }
+}
+
+var STOP_QS = ['A1','A2','A3'];
+var LIKERT_IDS = ['PBC1','PBC2','PBC3','PBC4','PPM1','PPM2','PPM3','PPM4','SRP1','SRP2','SRP3','SRP4','IBI1','IBI2','IBI3','IBI4','SR1','SR2','SR3','SR4'];
+var LIKERT_COLORS = ['s1','s2','s3','s4','s5','s6','s7'];
+
+// Section required questions
+var SEC_REQUIRED = {
+  0: ['A1','A2','A3','A4','A5','A6','A7','A8'],
+  1: ['PBC1','PBC2','PBC3','PBC4'],
+  2: ['PPM1','PPM2','PPM3','PPM4'],
+  3: ['SRP1','SRP2','SRP3','SRP4'],
+  4: ['IBI1','IBI2','IBI3','IBI4'],
+  5: ['SR1','SR2','SR3','SR4'],
+  6: ['C1','C2','C3','C4'],
+};
+
+// ============ INIT LIKERT BUTTONS ============
+function buildLikert() {
+  LIKERT_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    for (var n = 1; n <= 7; n++) {
+      (function(num) {
+        var btn = document.createElement('button');
+        btn.className = 'lik-btn';
+        btn.textContent = num;
+        btn.onclick = function() { selectLikert(id, num); };
+        el.appendChild(btn);
+      })(n);
+    }
+  });
+}
+
+function selectLikert(id, val) {
+  answers[id] = val;
+  var el = document.getElementById(id);
+  var btns = el.querySelectorAll('.lik-btn');
+  btns.forEach(function(b, i) {
+    b.className = 'lik-btn' + (i + 1 === val ? ' ' + LIKERT_COLORS[i] : '');
+  });
+  updateNext();
+}
+
+// ============ MCQ PICK ============
+function pick(btn) {
+  var q = btn.getAttribute('data-q');
+  var v = btn.getAttribute('data-v');
+  var isStop = btn.getAttribute('data-stop') === '1';
+
+  // Deselect siblings
+  var siblings = document.querySelectorAll('[data-q="' + q + '"]');
+  siblings.forEach(function(s) { s.classList.remove('sel'); });
+  btn.classList.add('sel');
+  answers[q] = v;
+
+  // Check stop
+  checkStop();
+  updateNext();
+}
+
+function checkStop() {
+  stopTriggered = false;
+  STOP_QS.forEach(function(q) {
+    if (answers[q]) {
+      var btn = document.querySelector('[data-q="' + q + '"][data-v="' + answers[q] + '"]');
+      if (btn && btn.getAttribute('data-stop') === '1') stopTriggered = true;
+    }
+  });
+  document.getElementById('stopBanner').classList.toggle('hidden', !stopTriggered);
+  updateNext();
+}
+
+// ============ NAVIGATION ============
+function canProceed() {
+  if (step < 0) return true;
+  if (stopTriggered) return false;
+  var req = SEC_REQUIRED[step] || [];
+  return req.every(function(k) { return answers[k] !== undefined; });
+}
+
+function updateNext() {
+  var btn = document.getElementById('btnNext');
+  btn.disabled = !canProceed();
+  if (stopTriggered) btn.disabled = true;
+}
+
+function showSection(s) {
+  // Hide all
+  document.getElementById('sec-intro').classList.add('hidden');
+  for (var i = 0; i <= 6; i++) document.getElementById('sec-'+i).classList.add('hidden');
+  document.getElementById('sec-done').classList.add('hidden');
+  document.getElementById('stopBanner').classList.add('hidden');
+
+  if (s === -1) {
+    document.getElementById('sec-intro').classList.remove('hidden');
+    document.getElementById('secNav').classList.add('hidden');
+    document.getElementById('progFill').style.width = '0%';
+    document.getElementById('progMeta').textContent = '';
+    document.getElementById('btnBack').classList.add('hidden');
+    document.getElementById('btnNext').textContent = 'Bắt đầu khảo sát →';
+    document.getElementById('navRow').classList.remove('hidden');
+  } else if (s === 7) {
+    document.getElementById('sec-done').classList.remove('hidden');
+    document.getElementById('secNav').classList.add('hidden');
+    document.getElementById('navRow').classList.add('hidden');
+    document.getElementById('progFill').style.width = '100%';
+    document.getElementById('progMeta').textContent = 'Hoàn tất 100%';
+  } else {
+    document.getElementById('sec-'+s).classList.remove('hidden');
+    if (s === 0 && stopTriggered) document.getElementById('stopBanner').classList.remove('hidden');
+    document.getElementById('secNav').classList.remove('hidden');
+    var pct = Math.round((s + 1) / 7 * 100);
+    document.getElementById('progFill').style.width = pct + '%';
+    document.getElementById('progMeta').textContent = pct + '% hoàn thành · Phần ' + (s+1) + '/7';
+    document.getElementById('btnBack').classList.remove('hidden');
+    document.getElementById('btnNext').textContent = s === 6 ? 'Gửi khảo sát ✓' : 'Tiếp theo →';
+    document.getElementById('navRow').classList.remove('hidden');
+
+    // Update pills
+    document.querySelectorAll('.pill').forEach(function(p, i) {
+      p.className = 'pill' + (i === s ? ' active' : i < s ? ' done' : '');
+    });
+  }
+  updateNext();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function goNext() {
+  if (!canProceed()) return;
+  if (step === 6) { saveResponse(); }
+  step++;
+  if (step > 6) step = 7;
+  showSection(step);
+}
+
+function goBack() {
+  step--;
+  showSection(step);
+}
+
+// ============ BOOT ============
+buildLikert();
+showSection(-1);
+</script>
+</body>
+</html>
