@@ -154,7 +154,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
   <div class="card hidden" id="sec-0">
     <div class="sec-badge">Phần A</div>
     <div class="sec-title">Thông tin Sàng lọc & Nhân khẩu học</div>
-    <div class="sec-desc">Câu A1–A3 giúp xác định đối tượng nghiên cứu phù hợp.</div>
+    <div class="sec-desc">Một số câu giúp xác định đối tượng nghiên cứu phù hợp.</div>
 
     <div class="q-block">
       <div class="q-label">A1. Bạn thuộc nhóm tuổi nào?</div>
@@ -168,39 +168,39 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
     </div>
 
     <div class="q-block">
-      <div class="q-label">A2. Bạn có thường xuyên mua sắm trực tuyến (Shopee, Lazada, TikTok Shop…) không?</div>
+      <div class="q-label">A2. Giới tính của bạn:</div>
       <div class="opt-list">
-        <button class="opt" data-q="A2" data-v="freq" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Có, thường xuyên (≥ 2 lần/tháng)</button>
-        <button class="opt" data-q="A2" data-v="occ" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Thỉnh thoảng (≤ 1 lần/tháng)</button>
-        <button class="opt" data-q="A2" data-v="never" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Không bao giờ</button>
+        <button class="opt" data-q="A2" data-v="m" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Nam</button>
+        <button class="opt" data-q="A2" data-v="f" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Nữ</button>
+        <button class="opt" data-q="A2" data-v="o" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác / Không muốn tiết lộ</button>
       </div>
     </div>
 
     <div class="q-block">
-      <div class="q-label">A3. Bạn đã từng sử dụng hoặc có ý định dùng BNPL (SPayLater, LazPayLater…) chưa?</div>
+      <div class="q-label">A3. Hiện tại bạn là:</div>
       <div class="opt-list">
-        <button class="opt" data-q="A3" data-v="used" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Đã sử dụng ít nhất một lần</button>
-        <button class="opt" data-q="A3" data-v="intent" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa dùng nhưng có ý định</button>
-        <button class="opt" data-q="A3" data-v="no" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa và không có ý định dùng</button>
+        <button class="opt" data-q="A3" data-v="stu" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Học sinh / Sinh viên</button>
+        <button class="opt" data-q="A3" data-v="work" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Đi làm toàn thời gian</button>
+        <button class="opt" data-q="A3" data-v="both" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Vừa học vừa làm</button>
+        <button class="opt" data-q="A3" data-v="other" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác</button>
       </div>
     </div>
 
     <div class="q-block">
-      <div class="q-label">A4. Giới tính của bạn:</div>
+      <div class="q-label">A4. Bạn đã từng sử dụng hoặc có ý định dùng BNPL (SPayLater, LazPayLater…) chưa?</div>
       <div class="opt-list">
-        <button class="opt" data-q="A4" data-v="m" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Nam</button>
-        <button class="opt" data-q="A4" data-v="f" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Nữ</button>
-        <button class="opt" data-q="A4" data-v="o" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác / Không muốn tiết lộ</button>
+        <button class="opt" data-q="A4" data-v="used" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Đã sử dụng ít nhất một lần</button>
+        <button class="opt" data-q="A4" data-v="intent" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa dùng nhưng có ý định</button>
+        <button class="opt" data-q="A4" data-v="no" data-stop="1" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa và không có ý định dùng</button>
       </div>
     </div>
 
     <div class="q-block">
-      <div class="q-label">A5. Hiện tại bạn là:</div>
+      <div class="q-label">A5. Trong 3 tháng qua, tần suất mua sắm trực tuyến của bạn trên các nền tảng thương mại điện tử (Shopee, Lazada, Tiktok Shop, v.v) như thế nào?</div>
       <div class="opt-list">
-        <button class="opt" data-q="A5" data-v="stu" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Học sinh / Sinh viên</button>
-        <button class="opt" data-q="A5" data-v="work" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Đi làm toàn thời gian</button>
-        <button class="opt" data-q="A5" data-v="both" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Vừa học vừa làm</button>
-        <button class="opt" data-q="A5" data-v="other" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác</button>
+        <button class="opt" data-q="A5" data-v="ltl" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Dưới 3 lần/tháng (Ít khi).</button>
+        <button class="opt" data-q="A5" data-v="freq" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>3-5 lần/tháng (Thường xuyên)</button>
+        <button class="opt" data-q="A5" data-v="occ" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Trên 5 lần/tháng (Rất thường xuyên)</button>
       </div>
     </div>
 
@@ -214,24 +214,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF2F7;min-height:1
       </div>
     </div>
 
-    <div class="q-block">
-      <div class="q-label">A7. Tần suất sử dụng BNPL trong 3 tháng gần nhất:</div>
-      <div class="opt-list">
-        <button class="opt" data-q="A7" data-v="0" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Chưa sử dụng</button>
-        <button class="opt" data-q="A7" data-v="1-2" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>1 – 2 lần</button>
-        <button class="opt" data-q="A7" data-v="3-5" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>3 – 5 lần</button>
-        <button class="opt" data-q="A7" data-v="5p" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Trên 5 lần</button>
-      </div>
-    </div>
-
     <div class="q-block" style="margin-bottom:0">
-      <div class="q-label">A8. Nền tảng BNPL bạn dùng nhiều nhất:</div>
+      <div class="q-label">A7. Nền tảng BNPL bạn dùng nhiều nhất:</div>
       <div class="opt-list">
-        <button class="opt" data-q="A8" data-v="spay" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>SPayLater (Shopee)</button>
-        <button class="opt" data-q="A8" data-v="lazpay" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>LazPayLater (Lazada)</button>
-        <button class="opt" data-q="A8" data-v="kredivo" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Kredivo</button>
-        <button class="opt" data-q="A8" data-v="momo" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Ví MoMo Trả sau</button>
-        <button class="opt" data-q="A8" data-v="other" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác</button>
+        <button class="opt" data-q="A7" data-v="spay" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>SPayLater (Shopee)</button>
+        <button class="opt" data-q="A7" data-v="lazpay" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>LazPayLater (Lazada)</button>
+        <button class="opt" data-q="A7" data-v="kredivo" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Kredivo</button>
+        <button class="opt" data-q="A7" data-v="momo" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Ví MoMo Trả sau</button>
+        <button class="opt" data-q="A7" data-v="other" onclick="pick(this)"><span class="radio"><span class="radio-dot"></span></span>Khác</button>
       </div>
     </div>
   </div>
@@ -388,7 +378,7 @@ var answers = {};
 // Dán URL Google Apps Script vào đây để thu thập online từ mọi người (xem hướng dẫn).
 var BACKEND_URL = "https://script.google.com/macros/s/AKfycbxf9l5iIGCxpyiNy_xUuWx2FlG45pp8h3dqzwCwuYje1zRDm_FWgSKChf18I5eBV2WcFw/exec";
 var STORE_KEY = "bnpl_survey_responses";
-var ALL_FIELDS = ['A1','A2','A3','A4','A5','A6','A7','A8',
+var ALL_FIELDS = ['A1','A2','A3','A4','A5','A6','A7',
   'PBC1','PBC2','PBC3','PBC4','PPM1','PPM2','PPM3','PPM4',
   'SRP1','SRP2','SRP3','SRP4','IBI1','IBI2','IBI3','IBI4',
   'SR1','SR2','SR3','SR4','C1','C2','C3','C4'];
@@ -414,13 +404,12 @@ function saveResponse() {
   }
 }
 
-var STOP_QS = ['A1','A2','A3'];
 var LIKERT_IDS = ['PBC1','PBC2','PBC3','PBC4','PPM1','PPM2','PPM3','PPM4','SRP1','SRP2','SRP3','SRP4','IBI1','IBI2','IBI3','IBI4','SR1','SR2','SR3','SR4'];
 var LIKERT_COLORS = ['s1','s2','s3','s4','s5','s6','s7'];
 
 // Section required questions
 var SEC_REQUIRED = {
-  0: ['A1','A2','A3','A4','A5','A6','A7','A8'],
+  0: ['A1','A2','A3','A4','A5','A6','A7'],
   1: ['PBC1','PBC2','PBC3','PBC4'],
   2: ['PPM1','PPM2','PPM3','PPM4'],
   3: ['SRP1','SRP2','SRP3','SRP4'],
